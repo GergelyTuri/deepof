@@ -1405,9 +1405,9 @@ def retrieve_corners_from_image(
         frame_copy = frame.copy()
 
         cv2_imshow(
-            "deepof - Select polygonal arena corners - (q: exit / d: delete) - {}/{} processed".format(
-                cur_vid, len(videos)
-            ),
+            # "deepof - Select polygonal arena corners - (q: exit / d: delete) - {}/{} processed".format(
+            #     cur_vid, len(videos)
+            # ),
             frame_copy,
         )
         cv2.setMouseCallback(
