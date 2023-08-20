@@ -19,6 +19,7 @@ from tqdm import tqdm
 from typing import Tuple, Any, List, Union, NewType
 import argparse
 import cv2
+from google.colab.patches import cv2_imshow
 import math
 import multiprocessing
 import networkx as nx
@@ -31,6 +32,7 @@ import tensorflow as tf
 import warnings
 
 import deepof.data
+
 
 # DEFINE CUSTOM ANNOTATED TYPES #
 project = NewType("deepof_project", Any)
@@ -1402,7 +1404,7 @@ def retrieve_corners_from_image(
     while True:
         frame_copy = frame.copy()
 
-        cv2.imshow(
+        cv2_imshow(
             "deepof - Select polygonal arena corners - (q: exit / d: delete) - {}/{} processed".format(
                 cur_vid, len(videos)
             ),
@@ -1450,7 +1452,7 @@ def retrieve_corners_from_image(
                 thickness=3,
             )
 
-        cv2.imshow(
+        cv2_imshow(
             "deepof - Select polygonal arena corners - (q: exit / d: delete) - {}/{} processed".format(
                 cur_vid, len(videos)
             ),
